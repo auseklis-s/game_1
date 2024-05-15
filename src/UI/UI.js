@@ -13,12 +13,12 @@ class UI {
         context.shadowOffsetY = 2;
         context.shadowColor = 'black';
         context.font = this.fontSize + 'px ' + this.fontFamily;
-        // очки
-        context.fillText('Score: ' + this.game.score, 20, 40);
-        // таймер
+        // Очки
+        context.fillText('Очки: ' + this.game.score, 20, 40);
+        // Таймер
         const formattedTime = (this.game.gameTime * 0.001).toFixed(1);
-        context.fillText('Timer: ' + formattedTime, 20, 100);
-        // сообщения о победе или проигрыше
+        context.fillText('Время: ' + formattedTime, 20, 100);
+        // Сообщения о победе или поражении
         if (this.game.gameOver) {
             context.textAlign = 'center';
             let message1;
@@ -31,13 +31,13 @@ class UI {
                 message2 = 'В следующий раз все получится!';
             }
             context.font = '70px ' + this.fontFamily;
-            context.fillText(message1, this.game.width * 0.5, this.game.height * 0.5 - 20);
+            context.fillText(message1, this.game.wight * 0.5, this.game.height * 0.5 - 20);
             context.font = '25px ' + this.fontFamily;
-            context.fillText(message2, this.game.width * 0.5, this.game.height * 0.5 + 20);
+            context.fillText(message2, this.game.wight * 0.5, this.game.height * 0.5 + 20);
         }
         for (let i = 0; i < this.game.ammo; i++) {
             context.fillRect(5 * i + 20, 50, 3, 20);
-      }
-      context.restore();
+        }
+        context.restore();
     }
 }
